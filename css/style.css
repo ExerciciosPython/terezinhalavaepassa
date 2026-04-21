@@ -21,7 +21,6 @@ body {
     min-height: 100vh;
 
     color: var(--cor-texto);
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: "Poppins", sans-serif;
 
     background-color: var(--cor-fundo);
@@ -45,6 +44,8 @@ header {
 
 h1 {
     margin: 0;
+
+    line-height: 1em;
 }
 
 #logo-container {
@@ -121,8 +122,7 @@ section {
 
     background-color: var(--cor-secoes);
 
-    transition: transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 section:hover {
@@ -149,6 +149,40 @@ hr {
     margin: 20px 0;
 }
 
+
+/* Lista de serviços */
+
+#lista-servicos {
+    list-style-type: none;
+
+    padding-left: 5px;
+
+    font-size: 1.8rem;
+}
+
+#lista-servicos li {
+    margin: 10px 0;
+    padding: 8px;
+
+    border-radius: 12px;
+
+    background-color: #d8ecff;
+
+    transition: transform 0.2s ease;
+}
+
+#lista-servicos li:hover {
+    transform: translateX(5px);
+}
+
+#lista-servicos li::before {
+    content: "✔";
+    color: #01c501;
+
+    margin-right: 8px;
+}
+
+
 /* Preços */
 
 .precos {
@@ -160,9 +194,7 @@ hr {
 }
 
 .card {
-    width: 35%;
-
-    /* margin: 0 20px; */
+    width: 40%;
 
     border: 1px solid black;
     border-radius: 20px;
@@ -201,49 +233,23 @@ hr {
     background-color: var(--cor-destaque);
 }
 
-/* Lista de serviços */
-
-#lista-servicos {
-    list-style-type: none;
-
-    padding-left: 5px;
-
-    font-size: 1.8rem;
-}
-
-#lista-servicos li {
-    margin: 10px 0;
-    padding: 8px;
-
-    border-radius: 12px;
-
-    background-color: #d8ecff;
-
-    transition: transform 0.2s ease;
-}
-
-#lista-servicos li:hover {
-    transform: translateX(5px);
-}
-
-#lista-servicos li::before {
-    content: "✔";
-    color: #01c501;
-
-    margin-right: 8px;
-}
-
 
 /* Seção de contato */
 
-#table-enderecos tr td:first-child::before {
+#table-enderecos tr::before {
     content: "📍";
+
+    margin: 0;
+}
+
+#table-enderecos tr td:nth-child(2) {
+    text-align: right;
 }
 
 .btn-maps {
     display: inline-block;
 
-    padding: 10px 1px;
+    padding: 10px 12px;
 
     border-radius: 25px;
 
@@ -261,10 +267,14 @@ hr {
     width: 100%;
 }
 
-#table-telefones tr td:first-child::before {
+#table-telefones tr::before {
     content: "📞";
 
-    margin-right: 20px;
+    margin: 0;
+}
+
+#table-telefones tr td:nth-child(2) {
+    text-align: right;
 }
 
 .btn-tel {
@@ -326,7 +336,7 @@ footer {
         height: 5rem;
     }
 
-    #precos {
+    .precos {
         flex-direction: column;
         gap: 30px;
     }
@@ -339,14 +349,30 @@ footer {
         padding: 20px 0;
     }
 
-    #table-telefones tr, #table-enderecos tr {
+    #table-enderecos tr,
+    #table-telefones tr {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .btn-tel, .btn-maps {
-        /* margin: 5px 0; */
+    #table-enderecos tr::before,
+    #table-telefones tr::before {
+        content: "";
+    }
+
+    #table-enderecos tr td:first-child::before {
+        content: "📍";
+    }
+
+    #table-telefones tr td:first-child::before {
+        content: "📞";
+
+        margin: 0;
+    }
+
+    .btn-tel,
+    .btn-maps {
         width: 100%;
 
         border-radius: 100px;
@@ -360,7 +386,8 @@ footer {
         padding: 10px 8px;
     }
 
-    .btn-maps, .btn-tel {
+    .btn-maps,
+    .btn-tel {
         font-size: 0.8em;
         line-height: 1em;
     }
