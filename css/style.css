@@ -237,9 +237,9 @@ hr {
 /* Seção de contato */
 
 #table-enderecos tr::before {
-    content: "📍";
+    content: "\2022";
 
-    margin: 0;
+    margin-right: 10px;
 }
 
 #table-enderecos tr td:nth-child(2) {
@@ -263,14 +263,18 @@ hr {
         transform 0.2s ease;
 }
 
+.btn-maps::before {
+    content: "➤ ";
+}
+
 #table-telefones {
     width: 100%;
 }
 
 #table-telefones tr::before {
-    content: "📞";
+    content: "\2022";
 
-    margin: 0;
+    margin-right: 10px;
 }
 
 #table-telefones tr td:nth-child(2) {
@@ -292,6 +296,10 @@ hr {
 
     transition: background-color 0.2s ease,
         transform 0.2s ease;
+}
+
+.btn-tel::before {
+    content: "📞 "
 }
 
 .btn-maps:hover,
@@ -361,14 +369,11 @@ footer {
         content: "";
     }
 
-    #table-enderecos tr td:first-child::before {
-        content: "📍";
-    }
-
+    #table-enderecos tr td:first-child::before,
     #table-telefones tr td:first-child::before {
-        content: "📞";
+        content: "\2022";
 
-        margin: 0;
+        margin-right: 5px;
     }
 
     .btn-tel,
