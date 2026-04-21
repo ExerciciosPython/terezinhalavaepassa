@@ -1,0 +1,367 @@
+/* Variáveis */
+:root {
+    --cor-principal: #2C7BE5;
+    --cor-secundaria: #6c9ddf;
+    --cor-fundo: #F4F4F4;
+    --cor-texto: #333333;
+    --cor-destaque: #256bc7;
+    --cor-secoes: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    color: var(--cor-texto);
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Poppins", sans-serif;
+
+    background-color: var(--cor-fundo);
+}
+
+
+
+
+
+/* =-=-=-=-=-=-=-=-=- CABEÇALHO -=-=-=-=-=-=-=-=-=-= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 30px;
+
+    background-color: var(--cor-principal);
+}
+
+h1 {
+    margin: 0;
+}
+
+#logo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#logo-container div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo-container p {
+    margin-top: 0;
+}
+
+#logo {
+    height: 6rem;
+}
+
+#links {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    list-style-position: inside;
+    list-style-type: none;
+
+    font-size: 1.3rem;
+}
+
+#links a {
+    color: white;
+    text-decoration: none;
+
+    transition: color 0.1s ease;
+}
+
+#links a:hover {
+    color: #dbe9ff;
+}
+
+
+
+
+
+/* =-=-=-=-=-=-=-=-=- CONTEÚDO PRINCIPAL -=-=-=-=-=-=-=-=-=-= */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+
+    margin: 100px 0;
+
+    font-size: 1.5rem;
+}
+
+
+/* Seção genérica */
+
+section {
+    width: min(600px, 90%);
+
+    padding: 30px 50px;
+
+    border-radius: 15px;
+    box-shadow: 0 2px 14px rgb(0, 0, 0, 0.1);
+
+    background-color: var(--cor-secoes);
+
+    transition: transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 2px 16px rgb(0, 0, 0, 0.2)
+}
+
+h2 {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+h3 {
+    width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* Preços */
+
+.precos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px 0;
+
+}
+
+.card {
+    width: 35%;
+
+    /* margin: 0 20px; */
+
+    border: 1px solid black;
+    border-radius: 20px;
+    border-spacing: 0;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: transform 0.2s ease;
+}
+
+.card tr {
+    display: flex;
+    flex-direction: column;
+}
+
+.card td {
+    padding: 10px;
+}
+
+.card td:first-child {
+    color: white;
+    font-weight: bold;
+
+    background-color: var(--cor-secundaria);
+
+    transition: background-color 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card:hover td:first-child {
+    background-color: var(--cor-destaque);
+}
+
+/* Lista de serviços */
+
+#lista-servicos {
+    list-style-type: none;
+
+    padding-left: 5px;
+
+    font-size: 1.8rem;
+}
+
+#lista-servicos li {
+    margin: 10px 0;
+    padding: 8px;
+
+    border-radius: 12px;
+
+    background-color: #d8ecff;
+
+    transition: transform 0.2s ease;
+}
+
+#lista-servicos li:hover {
+    transform: translateX(5px);
+}
+
+#lista-servicos li::before {
+    content: "✔";
+    color: #01c501;
+
+    margin-right: 8px;
+}
+
+
+/* Seção de contato */
+
+#table-enderecos tr td:first-child::before {
+    content: "📍";
+}
+
+.btn-maps {
+    display: inline-block;
+
+    padding: 10px 1px;
+
+    border-radius: 25px;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    background-color: var(--cor-secundaria);
+
+    transition: background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#table-telefones {
+    width: 100%;
+}
+
+#table-telefones tr td:first-child::before {
+    content: "📞";
+
+    margin-right: 20px;
+}
+
+.btn-tel {
+    display: inline-block;
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    background-color: var(--cor-secundaria);
+
+    transition: background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-maps:hover,
+.btn-tel:hover {
+    background-color: var(--cor-destaque);
+}
+
+.btn-maps:active,
+.btn-tel:active {
+    transform: scale(0.97);
+}
+
+
+
+
+
+/* =-=-=-=-=-=-=-=-=-=- RODAPÉ -=-=-=-=-=-=-=-=-=-= */
+
+footer {
+    padding: 30px 30px;
+
+    color: white;
+    text-align: center;
+
+    background-color: var(--cor-principal);
+}
+
+@media (max-width: 600px) {
+    #links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+
+
+
+/* =-=-=-=-=-=-=-=-=-=- Medias -=-=-=-=-=-=-=-=-=-= */
+@media (max-width: 600px) {
+    #logo {
+        height: 5rem;
+    }
+
+    #precos {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        width: 95%;
+    }
+
+    .card td {
+        padding: 20px 0;
+    }
+
+    #table-telefones tr, #table-enderecos tr {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .btn-tel, .btn-maps {
+        /* margin: 5px 0; */
+        width: 100%;
+
+        border-radius: 100px;
+    }
+
+    #lista-servicos {
+        font-size: 1em;
+    }
+
+    .btn-maps {
+        padding: 10px 8px;
+    }
+
+    .btn-maps, .btn-tel {
+        font-size: 0.8em;
+        line-height: 1em;
+    }
+}
