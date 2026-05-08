@@ -1,0 +1,300 @@
+/* Configurações iniciais */
+
+:root {
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+
+    --text: hsl(0, 0, 5%);
+    --secondary-text: hsl(0, 0, 30%);
+
+    --primary-color: hsl(200, 100%, 40%);
+    --secondary-color: hsl(150, 100%, 40%);
+
+    --hover: hsl(200, 100%, 30%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--bg-dark);
+
+    color: var(--secondary-text);
+
+    font-family: "Poppins";
+    /* font-size: 18px; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    background: var(--primary-color);
+}
+
+.grid-container > div {
+    background: var(--bg-light);
+}
+
+/* Cabeçalho */
+
+header {
+    padding: 20px;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo-container img {
+    width: auto;
+    height: 5rem;
+}
+
+nav ul {
+    list-style-type: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+/* Área principal */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.grid-container {
+    width: min(1440px, 90%);
+
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+    "card-1 card-2 card-3 card-4"
+    "localization localization contact contact";
+    gap: 20px;
+}
+
+.grid-container > div {
+    border-radius: 12px;
+    box-shadow: 0px 5px 14px rgb(0, 0, 0, 0.1);
+}
+
+
+/* Serviços */
+
+.card-servico {
+    border-top: 5px solid var(--secondary-color);
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    transition: all 0.2s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+}
+
+.card-servico img {
+    width: 100%;
+
+    border-radius: 8px 8px 0 0;
+
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    flex: 1;
+}
+
+.card-servico .tag {
+    padding: 2px 4px;
+
+    color: hsl(150, 100%, 15%);
+    background: var(--secondary-color);
+
+    font-size: 0.75rem;
+
+    border-radius: 20px;
+
+    align-self: center;
+}
+
+.tag.preco-ind {
+    color: hsl(347, 100%, 90%);
+    background-color: hsl(347, 100%, 40%);
+}
+
+.card-servico .servico {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-servico .preco {
+    color: hsl(150, 100%, 20%);
+    font-size: 1.65rem;
+    font-weight: bold;
+}
+
+
+/* Localização */
+
+#localizacao,
+#contato {
+    padding: 20px;
+
+    font-size: 1.125rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#loc-container,
+#cont-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+#localizacao a,
+#contato a {
+    padding: 10px;
+    border-radius: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 1.125rem;
+    text-align: center;
+
+    background: var(--primary-color);
+
+    align-self: flex-end;
+
+    transition: all 0.2s ease;
+}
+
+#localizacao a:hover,
+#contato a:hover {
+    background: var(--hover); 
+}
+
+#localizacao a {
+    padding: 10px;
+}
+
+#contato a {
+    padding: 10px 30px;
+}
+
+
+
+
+
+/* Rodapé */
+
+footer {
+    width: 100%;
+    padding: 30px 0;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+
+
+
+/* Medias */
+
+@media (max-width: 932px) {
+    .grid-container {
+        grid-template-areas:
+        "card-1 card-2"
+        "card-3 card-4"
+        "localization contact";
+    }
+
+    #loc-container,
+    #cont-container {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #loc-container a,
+    #cont-container a {
+        width: 100%;
+        margin-top: auto;
+
+        align-self: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .grid-container {
+        grid-template-areas:
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4"
+        "localization"
+        "contact";
+    }
+}
+
+@media (max-width: 810px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+        text-align: right;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/logo.png" alt="Logo do site">
+            <h1>Terezinha<br>Lava e Passa</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#localizacao">Endereço</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <div class="card-servico" style="grid-area: card-1;">
+                <img src="images/img-lavar.png" alt="Roupas lavadas">
+                <div class="card-info">
+                    <p class="tag">Preço por dúzia</p>
+                    <p class="servico">Lavar</p>
+                    <p class="preco">R$ 20,00</p>
+                </div>
+            </div>
+
+            <div class="card-servico" style="grid-area: card-2;">
+                <img src="images/img-passar.png" alt="Roupas passadas">
+                <div class="card-info">
+                    <p class="tag">Preço por dúzia</p>
+                    <p class="servico">Passar</p>
+                    <p class="preco">R$ 20,00</p>
+                </div>
+            </div>
+
+            <div class="card-servico" style="grid-area: card-3;">
+                <img src="images/img-lavar.png" alt="Roupas lavadas e passadas">
+                <div class="card-info">
+                    <p class="tag">Preço por dúzia</p>
+                    <p class="servico">Lavar + Passar</p>
+                    <p class="preco">R$ 40,00</p>
+                </div>
+            </div>
+
+            <div class="card-servico" style="grid-area: card-4;">
+                <img src="images/img-camisa-social.png" alt="Camisas sociais">
+                <div class="card-info">
+                    <p class="tag preco-ind">Preço individual</p>
+                    <p class="servico">Camisa social<br>(Lavar e/ou passar)</p>
+                    <p class="preco">R$ 15,00</p>
+                </div>
+            </div>
+
+            <div id="localizacao" style="grid-area: localization;">
+                <h2>Endereço</h2>
+                <div id="loc-container">
+                    <p>
+                        Rua Salomão Dibbo, Nº 620, São Carlos - SP
+                    </p>
+                    <a href="https://maps.app.goo.gl/15VrJkJC7FdxXKez7" target="_blank">Ver no mapa</a>
+                </div>
+            </div>
+
+            <div id="contato" style="grid-area: contact;">
+                <h2>Contato</h2>
+
+                <div id="cont-container">
+                    <p><b>Telefone fixo:</b> (16) 3416 - 9506</p>
+                    <a href="tel:+551634169506">Ligar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Disponível todos os dias da semana!</p>
+    </footer>
+</body>
+
+</html>
