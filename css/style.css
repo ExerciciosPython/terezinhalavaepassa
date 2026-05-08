@@ -280,6 +280,10 @@ footer {
 }
 
 @media (max-width: 575px) {
+    header {
+        padding: 10px 20px;
+    }
+
     .grid-container {
         grid-template-areas:
         "card-1"
